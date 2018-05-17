@@ -341,13 +341,11 @@ resumeDT <- addEvent(resumeDT,
 	tags = "customer-analytics, retail, machine-learning, optimization, data-science, visualization, R, AWS, churn, forecasting, NLP, aws-redshift, aws-athena, aws-ec2, aws-emr, aws-glue, aws-pipelines",
 	desc = 
 	"
-Responsabilities:
-<p> &bull; Define the <b>data science company strategy</b></p>	
+Define the <b>data science company strategy</b> and act as an internal <b>advisor on all issues related to data</b>:
 <p> &bull; Lead the Development of <b>Barkibu´s Predictive and Natural Language Processing models</b>. 
 Barkibu is active in 16 countries with a large and fast growing database of pet lovers and vets. </p>	
 <p> &bull; Identify infrastructure opportunities to <b>increase big data analytics productivity</b> </p>	
-<p> &bull; <b>Lead</b> a high-performing big data analytics team through the <b>successful development of Barkibu Intelligence Unit</b>. BIU help retailers or brands to better understand their customers (owners and pets) offering a complete analytics suite for advanced Persona Marketing Campaing Optimization, High-Value Customer Acquisition and Churn Prevention. </p>	
-<p> &bull; Act as an internal <b>advisor on all issues related to data</b> </p>	
+<p> &bull; <b>Lead</b> a high-performing big data analytics team through the <b>successful development of Barkibu Intelligence Unit</b>, a complete analytics suite for advanced Persona Marketing Campaing Optimization, High-Value Customer Acquisition and Churn Prevention. </p>	
 <p> &bull; <b>Hire, mentor, and manage</b> data scientists </p>	
 	",
 	comments = "",

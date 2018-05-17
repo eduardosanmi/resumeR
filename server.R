@@ -18,11 +18,11 @@ source("resumeR/functions.R")
 source("resumeR/data.R")
 
   output$timelineInteractive <- renderTimevis({
-    timevis( data = timeLine, timeLineGroups, fit = TRUE,
+    timevis( data = timeLine, timeLineGroups, fit = FALSE,
 	    , width = "100%", showZoom = FALSE
         , option = list(# maxHeight = 400, minHeight = 400,
 		                autoResize = FALSE, order = htmlwidgets::JS("function (a, b) { return a.id - b.id; }"))
-	   ) %>% setWindow("1999-10",substr(Sys.Date(),1,7)) %>% redraw() %>% setSelection(resumeDT[end == as.character(Sys.Date()), id]) 
+	   ) %>% setWindow("1999-10","2018-12") %>% redraw() %>% setSelection(resumeDT[end == as.character(Sys.Date()), id]) 
   })
 
   timelineInteractive_selected <- reactive({
@@ -115,6 +115,7 @@ source("resumeR/data.R")
 	tagsSelected <- unlist(strsplit(resumeDT[ idSelected,tags],",")) 
 	
 	op <- par(mar = rep(0, 4))
+	op
 	
 	if (idSelected == nrow(resumeDT)) {
 	   tagsSelected <- unlist(strsplit(resumeDT[ tipo == "res", tags],",")) 
