@@ -114,7 +114,7 @@ source("resumeR/data.R")
 	idSelected <- timelineInteractive_selected()
 	tagsSelected <- unlist(strsplit(resumeDT[ idSelected,tags],",")) 
 	
-	op <- par(mar = rep(0, 4), bg = "black")
+	op <- par(mar = rep(0, 4))
 	
 	if (idSelected == nrow(resumeDT)) {
 	   tagsSelected <- unlist(strsplit(resumeDT[ tipo == "res", tags],",")) 

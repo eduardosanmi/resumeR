@@ -10,7 +10,7 @@ resumeDT <- addEvent(resumeDT,
 	end = "2000-07", 
 	centro = "Universidad Complutense", 
 	title = "Master Degree Psychology",
-	tags = " statistics, machine-learning, AI, neural-networks, SPSS",
+	tags = " statistics, machine-learning, AI, neural-networks, SPSS, cognitive-science, experimental-psychology",
 	desc = 
 	" Degree Especialization in <b>Experimental Psychology</b> and <b>Cognitive Science:</b>
 <p> &bull; Covered fields: <b>Statistics, Artificial Intelligence, Machine Learning, Signal Processing</b>
@@ -26,7 +26,7 @@ resumeDT <- addEvent(resumeDT,
 	end = "2002-07", 
 	centro = "Universidad Complutense", 
 	title = "Doctorado Ciencia Cognitiva",
-	tags = "AI, neural-networks, machine-learning, nlp, text-mining, data-mining, visualization",
+	tags = "AI, neural-networks, machine-learning, nlp, text-mining, data-mining, visualization, cognitive-science, experimental-psychology",
 	desc = 
 	" <em>DEA Doctorado</em> Ciencias Cognitivas <b>(Suficiencia Investigadora)</b>  
 <p> &bull; Developing my <b>R+D</b> skills in <b>Artificial Neural Nets, Artificial Intelligence, Machine Learning, Natural Language Processing, Knowledge Representation</b> ",
@@ -41,7 +41,7 @@ resumeDT <- addEvent(resumeDT,
 	end = "2002-11", 
 	centro = "Universidad Carlos III", 
 	title = "Machine Learning Especialization",
-	tags = "business, analytics, machine-learning, neural-networks, data-mining",
+	tags = "business, analytics, machine-learning, neural-networks, data-mining, R, matlab",
 	desc = 
 	"<b>Herramientas Computacionales Avanzadas y Redes Neuronales Aplicadas al Análisis Estadistico en el Ambito Empresarial.</b>
 <p> &bull; Organized by Universidad Carlos III and Insituto Madrileño para la Formación 
