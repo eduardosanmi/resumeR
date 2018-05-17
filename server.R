@@ -3,19 +3,17 @@ library(data.table)
 library(text2vec)
 library(wordcloud)
 
-# source("sampleData.R")
-# source("resumeR/functions.R")
-# source("resumeR/data.R")
 
-	maxFreq <- 3
-	minFreq <- 1.25
-	maxWords <- 60
-	rotPer <- .01
+maxFreq <- 3
+minFreq <- 1.25
+maxWords <- 60
+rotPer <- .01
 
 function(input, output, session) {
 
 source("resumeR/functions.R")
 source("resumeR/data.R")
+source("resumeR/auxResume.R")
 
   output$timelineInteractive <- renderTimevis({
     timevis( data = timeLine, timeLineGroups, fit = FALSE,

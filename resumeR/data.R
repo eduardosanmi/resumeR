@@ -1,9 +1,3 @@
-timeLineGroups <- data.frame(id = NULL, content = NULL, subgrouporder = NULL, className = NULL)
-
-timeLineGroups <- rbind(timeLineGroups, data.frame(id = "edu", content = "Education", subgrouporder = 1, className = "edu"))
-timeLineGroups <- rbind(timeLineGroups, data.frame(id = "pub", content = "Publications", subgrouporder = 2, className = "pub"))
-timeLineGroups <- rbind(timeLineGroups, data.frame(id = "job", content = "Experience", subgrouporder = 3, className = "job"))
-
 # 1995-2000 Psy Degree (Spc. Experimental Psychology)
 resumeDT <- addEvent(resumeDT, 
 	start = "1995-09", 
@@ -100,9 +94,10 @@ resumeDT <- addEvent(resumeDT,
 	tags = "nlp, text-mining, data-science, machine-learning, visualization, R",
 	desc = 
 	" 
-<em>Herramienta de representación tridimensional de conocimiento basada en la relación de LSA extraída a partir de corpus.</em>
-<b>XXIV INTERNATIONAL AESLA CONFERENCE.</b> Corpus linguistics, computational linguistics and linguistic engineering. Madrid, 2006.
-<link>http://www.uned.es/aesla2006/documentos/Programa_definitivo.pdf</link>",
+<p><em>Herramienta de representación tridimensional de conocimiento basada en la relación de LSA extraída a partir de corpus.</em>
+<b>XXIV INTERNATIONAL AESLA CONFERENCE.</b> Corpus linguistics, computational linguistics and linguistic engineering. Madrid, 2006. 
+<a target='_blank' href='http://www.uned.es/aesla2006/documentos/Programa_definitivo.pdf'>http://www.uned.es/aesla2006/documentos/Programa_definitivo.pdf</a> </p>
+",
 	comments = "",
 	tipo = "pub"
 )
@@ -118,9 +113,9 @@ resumeDT <- addEvent(resumeDT,
 	tags = "visualization, R, machine-learning, text-mining, nlp, data-science",
 	desc = 
 	"
-<em>3D Knowledge Retrieval.</em>
+<p><em>3D Knowledge Retrieval.</em>
 <b>THE SECOND INTERNATIONAL R USER CONFERENCE</b>. Viena, 2006.
-<link>https://www.r-project.org/conferences/useR-2006/Presentations/index.html</link>",
+<a target='_blank' href='https://www.r-project.org/conferences/useR-2006/Presentations/index.html'>https://www.r-project.org/conferences/useR-2006/Presentations/index.html</a></p>",
 	comments = "",
 	tipo = "pub"
 )
@@ -210,7 +205,7 @@ resumeDT <- addEvent(resumeDT,
 	desc = 
 	" <em>fisheyeR: Fisheye and Hyperbolic-space-alike Interactive Visualization Tools in R.</em>
 <b>CRAN - The Comprehensive R Archive Network.</b> 2010.
-<link>http://cran.r-project.org/web/packages/fisheyeR/index.html</link>",
+<a target='_blank' href='http://cran.r-project.org/web/packages/fisheyeR/index.html'>http://cran.r-project.org/web/packages/fisheyeR/index.html</a>",
 	comments = "",
 	tipo = "pub"
 )
@@ -256,7 +251,7 @@ resumeDT <- addEvent(resumeDT,
 	" 
 <em>Developing Web Apps in R with Shiny.</em>
 <b>I XORNADA USUARIOS R EN GALICIA.</b> Centro de Novas Tecnoloxías. 2013.
-<link> http://webmelisa.es/xornada-r/ </link>",
+<a target='_blank' href='http://webmelisa.es/xornada-r/'>http://webmelisa.es/xornada-r/</a>",
 	comments = "",
 	tipo = "pub"
 )
@@ -304,7 +299,10 @@ resumeDT <- addEvent(resumeDT,
 	desc = 
 	" 
 <em>BiGuardian: Sistema de detección proactiva y predictiva de amenazas de ciberseguridad.</em>
-<b>ITMATI: Machine Learning Workshop. </b> Galicia. 2016",
+<b>ITMATI: Machine Learning Workshop. </b> Galicia. 2016.
+<a target='_blank' href='http://www.itmati.com/en/node/27020'>http://www.itmati.com/en/node/27020</a>
+
+",
 	comments = "",
 	tipo = "pub"
 )
@@ -351,167 +349,3 @@ Barkibu is active in 16 countries with a large and fast growing database of pet 
 	comments = "",
 	tipo = "job"
 )
-
-
-
-
-resumeDT$centro <- iconv(resumeDT$centro, "utf8","utf8")
-resumeDT$tags <- iconv(resumeDT$tags, "utf8","utf8")
-resumeDT$title <- iconv(resumeDT$title, "utf8","utf8")
-resumeDT$tags <- iconv(resumeDT$tags, "utf8","utf8")
-resumeDT$desc <- iconv(resumeDT$desc, "utf8","utf8")
-
-
-for (i in 1:nrow(resumeDT)) { 
-  # timeLine <- addTagEvent( timeLine, resumeDT[i,])
-  timeLine <- addTimeEvent( timeLine, resumeDT[i,])  
-}
-
-# probar background
-# Muted Minimal (rojo, azul, gris, blanco)
-# DUSTY #96858f 150,133,143
-# LAVENDAR #6d7993 109,121,147
-# OVERCAST #144,153,162
-# PAPER #D5D5D5 213,213,213
-
-timeLine <- rbind(fill = TRUE, timeLine, 
- list(content = "", 
- start = "1975-10",#resumeDT[,min(end, na.rm = T)],
- end = resumeDT[,max(end, na.rm = T)] , 
- group = "edu",
- type = "background",
- style =  "background-color: rgba(150,133,143,.15);"  ))
-
-timeLine <- rbind(fill = TRUE, timeLine, 
- list(content = "", 
- start = "1975-10", # resumeDT[,min(end, na.rm = T)],
- end = resumeDT[,max(end, na.rm = T)] , 
- group = "pub",
- type = "background",
- style =  "background-color: rgba(109,121,147,.15);"  ))	
-
-timeLine <- rbind(fill = TRUE, timeLine, 
- list(content = "", 
- start = "1975-10", #resumeDT[,min(end, na.rm = T)],
- end = resumeDT[,max(end, na.rm = T)] , 
- group = "job",
- type = "background",
- style =  "
-  background: rgba(145,0,145,.5);
-  background: -webkit-linear-gradient(left, rgba(109,121,147,.25) , rgba(109,121,147,.35)); 
-  background: -o-linear-gradient(right, rgba(109,121,147,.25), rgba(109,121,147,.35)); 
-  background: -moz-linear-gradient(right, rgba(109,121,147,.25), rgba(109,121,147,.35)); 
-  background: linear-gradient(to right, rgba(109,121,147,.25) , rgba(109,121,147,.35));			 
-			 "  ))
-
-#setorder(timeLine, start)
-timeLine[,id := 1:.N]
-
-# Generamos entrada Resumen
-it_train = itoken(resumeDT$tags, 
-				 preprocessor = removeMostPunctuation,
-				 progressbar = FALSE)
-				 
-vocab = create_vocabulary(it_train, 
-		  stopwords = c("a","y","o","el","la","los","las","un","una","unos","unas","de","del",
-			  "en","in","and",""))
-
-vocab <- data.table(vocab)
-content2show <- vocab[order(-term_count), term]	
-# content2show <- vocab$vocab[order(-terms_counts), terms]
-
-resumeDT <- addEvent(resumeDT, 
-	start = as.character(Sys.Date()), 
-	end = NA, 
-	centro = "", 
-	title = "BIG DATA & ANALYTICS PROFESSIONAL",
-	tags = paste(content2show, collapse = ", "),
-	desc = "
-<p> &bull;
-Result-oriented, hands-on <b>data science professional</b>, 
-with a successful record of accomplishments in <b>Machine Learning, 
-Text Mining, Business Intelligence and Analytics </b> projects, 
-as well as in academic research.
-</p>
-<p> &bull;
-Over <b>fifteen years of professional experience</b> in diversified industry fields,
- covering data modeling, data mining, text mining, machine learning and NLP research & development.
- An experience that not only leads to <b>enriched industry understanding</b>, but also aids exchange of ideas, 
- helping me build a holistic perspective.
-</p>
-<p> &bull;
-Major strengths include <b>strong leadership and capacity to work as a team player</b>, 
-as well as <b>excellent communicational and technical skills</b>.
-</p>
-<em>* Select a label in the timeline to see its details </em>
-",
-	comments = " ",
-	tipo = "res"
-)
-
-
-# Sales & Marketing
-# Finance & Risk 
-# Customer & Channel 
-# Operations & Workforce 
-
-# Demand Forecasting
-# Loyalty Programs
-# Customer Churn 
-# Cross-sell & Upsell 
-# Customer Acquisition 
-# Marketing Mix Optimization 
-# Fraud Detection
-# Risk& Compliance 
-# Loan Defaults 
-# Pricing Strategy
-# Perf Risk Management 
-# Lifetime Customer Value 
-# Product Segmentation 
-# Lifetime Customer Value 
-# Population Health
-# Patient Demographics 
-# Supply Chain Optimization
-# Personalization
-# Store Location Demographics
-# Inventory Management 
-# Call Center Optimization
-# Operational Efficiency 
-# Pay for Performance 
-# Remote Monitoring 
-# Predictive Maintenance 
-# Asset Management 
-
-# Color Hex
-# http://www.color-hex.com/color/d5d5d5
-
-# Color theme Palettes
-# Corporate (white, darkblue, blue, lightwhite)
-# FRESH #f7f5e6 
-# VERMILLION #333A56 
-# SUNSHINE #52658f    
-# CLEAN #e8e8e8
-
-# Muted Minimal (rojo, azul, gris, blanco)
-# DUSTY #96858f
-# LAVENDAR #6d7993
-# OVERCAST #9099a2
-# PAPER #D5D5D5
-
-# warm
-# GRAIN #d7cec7
-# BLACKBOARD #565656
-# OXBLOOD #76323f
-# TAN #c09f80
-
-# fresh blues
-# FEATHER #77c904
-# MARINE #57bc90
-# FORES #015249
-# SLEEK GREY #a5a5af
-
-# crisp clean
-# ICE #99d3df
-# FRESH WATER #88bbd6
-# PLASTER #cdcdcd
-# LINEN #e9e9e9
