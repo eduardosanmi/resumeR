@@ -113,8 +113,7 @@ source("resumeR/auxResume.R")
 	tagsSelected <- unlist(strsplit(resumeDT[ idSelected,tags],",")) 
 	
 	op <- par(mar = rep(0, 4))
-	op
-	
+		
 	if (idSelected == nrow(resumeDT)) {
 	   tagsSelected <- unlist(strsplit(resumeDT[ tipo == "res", tags],",")) 
 	   maxFreq <- 2.15
@@ -138,7 +137,7 @@ source("resumeR/auxResume.R")
     vocab <- data.table(vocab)
     content2show <- vocab[order(-term_count), term]	
     contentFreq <- vocab[order(-term_count), term_count]	
-	
+
     wordcloud(content2show, contentFreq, scale=c(maxFreq, minFreq), family = c("mono"), font = 2,
               min.freq = 1, max.words = maxWords, rot.per = rotPer, random.order = FALSE,
               colors = colores, use.r.layout = TRUE )		  
