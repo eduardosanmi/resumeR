@@ -311,10 +311,10 @@ resumeDT <- addEvent(resumeDT,
 
 # "Oesia", "Consultor Senior Big Data Analytics", 
 # c("R","python","scala","spark","machine-learning", "text-mining", "nlp", "data-science", "visualization"),
-# startJob = "2016-05", endJob = "2017-12")	
+# startJob = "2016-05", endJob = "2017-09")	
 resumeDT <- addEvent(resumeDT, 
 	start = "2016-05", 
-	end = as.character(Sys.Date()), 
+	end = "2017-09", 
 	centro = "Oesia", 
 	title = "BIG DATA ANALYTICS SENIOR CONSULTANT",
 	tags = "supply-chain, machine-learning, optimization, data-science, visualization, R, python, scala, spark, Hive",
@@ -329,6 +329,33 @@ Developing <b>machine-learning Algorithms and Applications</b> in diverse indust
 	comments = "",
 	tipo = "job"
 )
+
+# "Barkibu", "Head of Data Science", 
+# c("R","python","scala","spark","machine-learning", "text-mining", "nlp", "data-science", "visualization"),
+# startJob = "2017-09", endJob = "2018-12")	
+resumeDT <- addEvent(resumeDT, 
+	start = "2017-09", 
+	end = as.character(Sys.Date()), 
+	centro = "Barkibu", 
+	title = "HEAD OF DATA SCIENCE",
+	tags = "customer-analytics, retail, machine-learning, optimization, data-science, visualization, R, AWS, churn, forecasting, NLP, aws-redshift, aws-athena, aws-ec2, aws-emr, aws-glue, aws-pipelines",
+	desc = 
+	"
+Responsabilities:
+<p> &bull; Define the <b>data science company strategy</b></p>	
+<p> &bull; Lead the Development of <b>Barkibu´s Predictive and Natural Language Processing models</b>. 
+Barkibu is active in 16 countries with a large and fast growing database of pet lovers and vets. </p>	
+<p> &bull; Identify infrastructure opportunities to <b>increase big data analytics productivity</b> </p>	
+<p> &bull; <b>Lead</b> a high-performing big data analytics team through the <b>successful development of Barkibu Intelligence Unit</b>. BIU help retailers or brands to better understand their customers (owners and pets) offering a complete analytics suite for advanced Persona Marketing Campaing Optimization, High-Value Customer Acquisition and Churn Prevention. </p>	
+<p> &bull; Act as an internal <b>advisor on all issues related to data</b> </p>	
+<p> &bull; <b>Hire, mentor, and manage</b> data scientists </p>	
+	",
+	comments = "",
+	tipo = "job"
+)
+
+
+
 
 resumeDT$centro <- iconv(resumeDT$centro, "utf8","utf8")
 resumeDT$tags <- iconv(resumeDT$tags, "utf8","utf8")
