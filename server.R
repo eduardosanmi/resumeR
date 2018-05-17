@@ -18,11 +18,11 @@ source("resumeR/functions.R")
 source("resumeR/data.R")
 
   output$timelineInteractive <- renderTimevis({
-    timevis( data = timeLine, timeLineGroups
+    timevis( data = timeLine, timeLineGroups, fit = TRUE,
 	    , width = "100%", showZoom = FALSE
         , option = list(# maxHeight = 400, minHeight = 400,
 		                autoResize = FALSE, order = htmlwidgets::JS("function (a, b) { return a.id - b.id; }"))
-	   ) %>% setWindow("1999-10","2017-12") %>% redraw() %>% setSelection(resumeDT[end == as.character(Sys.Date()), id]) 
+	   ) %>% setWindow("1999-10",substr(Sys.Date(),1,7)) %>% redraw() %>% setSelection(resumeDT[end == as.character(Sys.Date()), id]) 
   })
 
   timelineInteractive_selected <- reactive({
@@ -114,7 +114,7 @@ source("resumeR/data.R")
 	idSelected <- timelineInteractive_selected()
 	tagsSelected <- unlist(strsplit(resumeDT[ idSelected,tags],",")) 
 	
-	op <- par(mar = rep(0, 4))
+	op <- par(mar = rep(0, 4), bg = "black")
 	
 	if (idSelected == nrow(resumeDT)) {
 	   tagsSelected <- unlist(strsplit(resumeDT[ tipo == "res", tags],",")) 
@@ -142,7 +142,7 @@ source("resumeR/data.R")
 	
     wordcloud(content2show, contentFreq, scale=c(maxFreq, minFreq), family = c("mono"), font = 2,
               min.freq = 1, max.words = maxWords, rot.per = rotPer, random.order = FALSE,
-              colors = colores, use.r.layout = TRUE )
+              colors = colores, use.r.layout = TRUE )		  
   })  
 
   output$downloadData <- downloadHandler(
